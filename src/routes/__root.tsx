@@ -38,6 +38,13 @@ export const Route = createRootRoute({
       { name: "author", content: "Declan Smit" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { property: "og:title", content: "Declan Smit | Financial Planner" },
+      { name: "twitter:title", content: "Declan Smit | Financial Planner" },
+      { name: "description", content: "Declan Smit is an Old Mutual-accredited financial planner based in Hermanus, serving the Western Cape. Retirement planning, Risk planning and investments." },
+      { property: "og:description", content: "Declan Smit is an Old Mutual-accredited financial planner based in Hermanus, serving the Western Cape. Retirement planning, Risk planning and investments." },
+      { name: "twitter:description", content: "Declan Smit is an Old Mutual-accredited financial planner based in Hermanus, serving the Western Cape. Retirement planning, Risk planning and investments." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/gmSjB7JeSvX0I8XOuHrT6xwISa32/social-images/social-1776981083864-og_image.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/gmSjB7JeSvX0I8XOuHrT6xwISa32/social-images/social-1776981083864-og_image.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
