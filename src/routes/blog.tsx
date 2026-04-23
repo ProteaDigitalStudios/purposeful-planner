@@ -76,43 +76,43 @@ function BlogPage() {
             </Link>
           </div>
         ) : (
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((p) => (
-            <article
-              key={p.id}
-              className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40"
-            >
-              <div className="flex items-center justify-between">
-                <span
-                  className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                    categoryColor[p.category] ?? "bg-muted text-muted-foreground"
-                  }`}
-                >
-                  {p.category}
-                </span>
-                <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                  <Calendar className="h-3.5 w-3.5" />
-                  {formatDate(p.date)}
-                </span>
-              </div>
-
-              <h2 className="mt-5 font-serif text-xl leading-snug text-foreground transition-colors group-hover:text-primary">
-                {p.title}
-              </h2>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {p.excerpt}
-              </p>
-
-              <Link
-                to="/blog/$slug"
-                params={{ slug: p.slug }}
-                className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5"
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {posts.map((p) => (
+              <article
+                key={p.id}
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40"
               >
-                Read more <ArrowRight className="h-4 w-4" />
-              </Link>
-            </article>
-          ))}
-        </div>
+                <div className="flex items-center justify-between">
+                  <span
+                    className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                      categoryColor[p.category] ?? "bg-muted text-muted-foreground"
+                    }`}
+                  >
+                    {p.category}
+                  </span>
+                  <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <Calendar className="h-3.5 w-3.5" />
+                    {formatDate(p.date)}
+                  </span>
+                </div>
+
+                <h2 className="mt-5 font-serif text-xl leading-snug text-foreground transition-colors group-hover:text-primary">
+                  {p.title}
+                </h2>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {p.excerpt}
+                </p>
+
+                <Link
+                  to="/blog/$slug"
+                  params={{ slug: p.slug }}
+                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-2.5"
+                >
+                  Read more <ArrowRight className="h-4 w-4" />
+                </Link>
+              </article>
+            ))}
+          </div>
         )}
       </section>
     </SiteLayout>
