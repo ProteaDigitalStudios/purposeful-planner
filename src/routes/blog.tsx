@@ -3,6 +3,16 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import postsData from "@/data/posts.json";
 
+type Post = {
+  id: string;
+  title: string;
+  date: string;
+  category: string;
+  excerpt: string;
+  slug: string;
+  content: string;
+};
+
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
