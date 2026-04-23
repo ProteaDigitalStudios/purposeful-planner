@@ -1,16 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { MapPin, Mail, MessageCircle, Send, CheckCircle2 } from "lucide-react";
+import { MapPin, Mail, MessageCircle, Phone, Send, CheckCircle2, Loader2 } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Declan Smit | Financial Planner Hermanus" },
+      { title: "Contact — Declan Smit | Financial Planner Overberg" },
       {
         name: "description",
         content:
-          "Book a free consultation with Declan Smit. Based in Hermanus, serving the Overberg region. WhatsApp, email or contact form.",
+          "Book a free consultation with Declan Smit. Based in the Overberg, servicing the whole Western Cape. WhatsApp, call, email or contact form.",
       },
       { property: "og:title", content: "Contact Declan Smit" },
       { property: "og:description", content: "Book a free 30-minute financial planning consultation." },
@@ -19,12 +19,39 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xpqkkyjz";
+const WHATSAPP_URL =
+  "https://wa.me/27792803854?text=Hi%20Declan%2C%20I%27d%20like%20to%20book%20a%20consultation.";
+
 function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setError(null);
+    setSubmitting(true);
+
+    try {
+      const formData = new FormData(e.currentTarget);
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        const data = await res.json().catch(() => null);
+        setError(data?.errors?.[0]?.message ?? "Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Network error. Please try again or reach out via WhatsApp.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -36,7 +63,7 @@ function ContactPage() {
             Let's start the conversation.
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
-            Based in Hermanus | Serving the Overberg Region. Reply within one business day.
+            Based in the Overberg | Servicing the whole Western Cape. Reply within one business day.
           </p>
         </div>
       </section>
@@ -62,22 +89,39 @@ function ContactPage() {
                 <Field label="Phone" name="phone" type="tel" />
                 <div>
                   <label htmlFor="message" className="text-sm font-medium text-foreground">
-                    Message
+                    Message <span className="text-primary">*</span>
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={5}
                     required
+                    maxLength={2000}
                     className="mt-1.5 w-full rounded-md border border-input bg-background px-3.5 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                     placeholder="Tell me a little about what you'd like to plan for…"
                   />
                 </div>
+
+                {error && (
+                  <p className="text-sm text-destructive" role="alert">
+                    {error}
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground shadow-sm transition hover:bg-primary-glow"
+                  disabled={submitting}
+                  className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground shadow-sm transition hover:bg-primary-glow disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  Send Message <Send className="h-4 w-4" />
+                  {submitting ? (
+                    <>
+                      Sending… <Loader2 className="h-4 w-4 animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      Send Message <Send className="h-4 w-4" />
+                    </>
+                  )}
                 </button>
               </form>
             )}
@@ -86,7 +130,7 @@ function ContactPage() {
           {/* Sidebar */}
           <aside className="space-y-5">
             <a
-              href="https://wa.me/27000000000?text=Hi%20Declan%2C%20I%27d%20like%20to%20book%20a%20consultation."
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 rounded-xl bg-primary p-5 text-primary-foreground shadow-elegant transition hover:bg-primary-glow"
@@ -97,14 +141,31 @@ function ContactPage() {
               <span>
                 <span className="block font-serif text-lg">Chat on WhatsApp</span>
                 <span className="block text-sm text-primary-foreground/80">
-                  Fastest way to reach me
+                  079 280 3854 — fastest way to reach me
                 </span>
               </span>
             </a>
 
             <div className="space-y-4 rounded-xl border border-border bg-card p-6">
-              <InfoRow icon={MapPin} title="Location" body="Hermanus, Western Cape — Serving the Overberg" />
-              <InfoRow icon={Mail} title="Email" body="declan@example.co.za" />
+              <InfoRow
+                icon={Phone}
+                title="Phone"
+                body={<a href="tel:+27792803854" className="hover:text-primary">079 280 3854</a>}
+              />
+              <InfoRow
+                icon={Mail}
+                title="Email"
+                body={
+                  <a href="mailto:declan.smit@oldmutual.com" className="hover:text-primary">
+                    declan.smit@oldmutual.com
+                  </a>
+                }
+              />
+              <InfoRow
+                icon={MapPin}
+                title="Location"
+                body="Based in the Overberg — Servicing the whole Western Cape"
+              />
             </div>
 
             <div className="rounded-xl border border-gold/30 bg-gold/5 p-5">
@@ -142,6 +203,7 @@ function Field({
         name={name}
         type={type}
         required={required}
+        maxLength={200}
         className="mt-1.5 w-full rounded-md border border-input bg-background px-3.5 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
       />
     </div>
@@ -155,7 +217,7 @@ function InfoRow({
 }: {
   icon: typeof MapPin;
   title: string;
-  body: string;
+  body: React.ReactNode;
 }) {
   return (
     <div className="flex gap-4">
