@@ -45,7 +45,7 @@ function formatDate(d: string) {
 }
 
 function BlogPage() {
-  const posts = [...postsData].sort((a, b) => +new Date(b.date) - +new Date(a.date));
+  const posts = ([...postsData] as Post[]).sort((a, b) => +new Date(b.date) - +new Date(a.date));
 
   return (
     <SiteLayout>
