@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CheckCircle2, GraduationCap, Award, MapPin, ArrowRight } from "lucide-react";
+import { CheckCircle2, Award, MapPin, ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
+import declanPortrait from "@/assets/declan-portrait.jpeg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -9,7 +10,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Meet Declan Smit — a young, RE5-qualified, Old Mutual accredited financial planner based in Hermanus, serving clients across the Overberg.",
+          "Meet Declan Smit — a young, Old Mutual accredited financial planner based in the Overberg, servicing the whole Western Cape.",
       },
       { property: "og:title", content: "About Declan Smit" },
       {
@@ -22,9 +23,9 @@ export const Route = createFileRoute("/about")({
 });
 
 const credentials = [
-  { icon: GraduationCap, label: "RE5 Regulatory Exam", desc: "Qualified representative under FAIS" },
-  { icon: Award, label: "Old Mutual Accredited", desc: "Authorised adviser representative" },
-  { icon: MapPin, label: "Hermanus-Based", desc: "Serving the Overberg region" },
+  { icon: Award, label: "Old Mutual Accredited", desc: "Risk, short-term insurance, advanced investments, retirement & estate planning" },
+  { icon: MapPin, label: "Overberg Based", desc: "Servicing the whole Western Cape" },
+  { icon: CheckCircle2, label: "RE5 — In Progress", desc: "Working towards FAIS RE5 accreditation" },
 ];
 
 function AboutPage() {
@@ -33,14 +34,18 @@ function AboutPage() {
       <section className="bg-subtle-gradient">
         <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
           <div className="grid items-center gap-12 md:grid-cols-[280px_1fr]">
-            {/* Photo placeholder */}
+            {/* Portrait */}
             <div className="relative mx-auto md:mx-0">
               <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-primary via-primary-glow to-gold opacity-30 blur-xl" />
-              <div className="relative flex h-64 w-64 items-center justify-center overflow-hidden rounded-full border-4 border-background bg-gradient-to-br from-primary to-primary-glow shadow-elegant">
-                <span className="font-serif text-7xl font-semibold text-primary-foreground">DS</span>
+              <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-background shadow-elegant">
+                <img
+                  src={declanPortrait}
+                  alt="Declan Smit, financial planner"
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div className="absolute -bottom-2 right-4 rounded-full border-4 border-background bg-gold px-3 py-1 text-xs font-semibold text-gold-foreground shadow-card">
-                Hermanus
+                Overberg
               </div>
             </div>
 
@@ -50,11 +55,11 @@ function AboutPage() {
                 Hello, I'm Declan.
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-                I'm a 22-year-old financial planner based in Hermanus, working with
-                individuals, families and small business owners across the Overberg.
-                I joined the industry because I believe most people don't need more
-                financial products — they need a clear plan, explained honestly, by
-                someone who actually listens.
+                I'm a 23-year-old financial planner based in the Overberg, servicing
+                individuals, families and small business owners across the whole
+                Western Cape. I joined the industry because I believe most people don't
+                need more financial products — they need a clear plan, explained
+                honestly, by someone who actually listens.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
                 As a younger adviser, I bring fresh energy, modern tools and a long-term

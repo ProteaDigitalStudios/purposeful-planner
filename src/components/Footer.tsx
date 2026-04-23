@@ -1,14 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Linkedin, Facebook } from "lucide-react";
-
-// TikTok inline SVG (Lucide doesn't ship one)
-function TiktokIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
-      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.86a8.16 8.16 0 0 0 4.77 1.52V6.93a4.85 4.85 0 0 1-1.84-.24z" />
-    </svg>
-  );
-}
+import { Linkedin, Facebook, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
@@ -23,29 +14,35 @@ export function Footer() {
               <span className="font-serif text-lg">Declan Smit</span>
             </div>
             <p className="mt-3 text-sm text-background/70">
-              Financial Planner serving Hermanus and the Overberg region.
+              Financial Planner based in the Overberg, servicing the whole Western Cape.
             </p>
             <div className="mt-5 flex gap-3">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/declan-smit-a85365271"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="flex h-9 w-9 items-center justify-center rounded-md bg-background/10 text-background/80 transition hover:bg-primary hover:text-primary-foreground"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61576378898104"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
                 className="flex h-9 w-9 items-center justify-center rounded-md bg-background/10 text-background/80 transition hover:bg-primary hover:text-primary-foreground"
               >
                 <Facebook className="h-4 w-4" />
               </a>
               <a
-                href="https://tiktok.com"
-                aria-label="TikTok"
+                href="https://www.instagram.com/declansmit_financialplanner/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
                 className="flex h-9 w-9 items-center justify-center rounded-md bg-background/10 text-background/80 transition hover:bg-primary hover:text-primary-foreground"
               >
-                <TiktokIcon className="h-4 w-4" />
+                <Instagram className="h-4 w-4" />
               </a>
             </div>
           </div>
@@ -63,9 +60,16 @@ export function Footer() {
           <div>
             <h4 className="font-serif text-base text-background">Contact</h4>
             <ul className="mt-3 space-y-2 text-sm text-background/70">
-              <li>Hermanus, Western Cape</li>
-              <li>Serving the Overberg Region</li>
-              <li><a href="mailto:declan@example.co.za" className="hover:text-gold">declan@example.co.za</a></li>
+              <li>Based in the Overberg</li>
+              <li>Servicing the Western Cape</li>
+              <li>
+                <a href="tel:+27792803854" className="hover:text-gold">079 280 3854</a>
+              </li>
+              <li>
+                <a href="mailto:declan.smit@oldmutual.com" className="hover:text-gold">
+                  declan.smit@oldmutual.com
+                </a>
+              </li>
             </ul>
           </div>
         </div>
