@@ -103,6 +103,7 @@ function BlogPage() {
             </article>
           ))}
         </div>
+        )}
       </section>
     </SiteLayout>
   );
