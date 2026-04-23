@@ -3,6 +3,16 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import postsData from "@/data/posts.json";
 
+type Post = {
+  id: string;
+  title: string;
+  date: string;
+  category: string;
+  excerpt: string;
+  slug: string;
+  content: string;
+};
+
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
@@ -35,7 +45,7 @@ function formatDate(d: string) {
 }
 
 function BlogPage() {
-  const posts = [...postsData].sort((a, b) => +new Date(b.date) - +new Date(a.date));
+  const posts = ([...postsData] as Post[]).sort((a, b) => +new Date(b.date) - +new Date(a.date));
 
   return (
     <SiteLayout>
@@ -52,6 +62,20 @@ function BlogPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-16">
+        {posts.length === 0 ? (
+          <div className="rounded-2xl border border-dashed border-border bg-card p-12 text-center">
+            <h2 className="font-serif text-2xl text-foreground">New articles coming soon</h2>
+            <p className="mt-3 text-muted-foreground">
+              I'm working on the first set of insights. Check back shortly — or get in touch in the meantime.
+            </p>
+            <Link
+              to="/contact"
+              className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary-glow"
+            >
+              Book a Consultation
+            </Link>
+          </div>
+        ) : (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((p) => (
             <article
@@ -89,6 +113,7 @@ function BlogPage() {
             </article>
           ))}
         </div>
+        )}
       </section>
     </SiteLayout>
   );

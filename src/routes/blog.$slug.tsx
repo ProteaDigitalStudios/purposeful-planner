@@ -3,9 +3,19 @@ import { ArrowLeft, Calendar } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import postsData from "@/data/posts.json";
 
+type Post = {
+  id: string;
+  title: string;
+  date: string;
+  category: string;
+  excerpt: string;
+  slug: string;
+  content: string;
+};
+
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
-    const post = postsData.find((p) => p.slug === params.slug);
+    const post = (postsData as Post[]).find((p) => p.slug === params.slug);
     if (!post) throw notFound();
     return post;
   },
