@@ -1,1 +1,129 @@
-[]
+const posts = [
+  {
+    id: 4,
+    title: "Tax-Free Investments: The Most Underused Tool in South Africa",
+    date: "2026-04-24",
+    category: "Investing",
+    excerpt: "R500 a month. Zero tax on growth. Here's what that quietly becomes over 30 years — and why most South Africans still aren't using it.",
+    slug: "tax-free-investments-most-underused-tool",
+    content: `
+<p>The wealthy don't just earn more — they keep more. One of the ways they do this is through a tool that is available to every South African, regardless of income: the Tax-Free Investment. Most people have heard of it. Very few are actually using it correctly.</p>
+
+<p>This article breaks it down simply — what it is, what it protects you from, and what it can realistically do for someone earning a normal income.</p>
+
+<h3>What Is a Tax-Free Investment?</h3>
+
+<p>A Tax-Free Investment (TFI) is not a savings account in the traditional sense. Think of it as a wrapper — inside it, you can hold unit trusts, ETFs, and other growth assets. Everything inside that wrapper grows completely free of tax, no matter how much it grows or for how long.</p>
+
+<p>SARS allows you to contribute up to R46,000 per year (as of the 2026 Budget) and R500,000 over your lifetime. On those contributions and all the growth — you pay zero tax. In every sense, it is a gift from SARS. But only if you use it correctly.</p>
+
+<p>One important rule most people miss: <strong>withdrawals do not restore your contribution room.</strong> If you withdraw R50,000, that R50,000 of lifetime allowance is gone permanently. The flexibility to withdraw exists — but using it repeatedly is one of the most expensive financial mistakes you can make.</p>
+
+<h3>What Tax Are You Actually Avoiding?</h3>
+
+<p>Outside of a TFI, your investment returns are eroded in three ways:</p>
+
+<p><strong>Dividends withholding tax</strong> is charged at 20% of any dividends earned. The moment you disinvest, your return is already 20% lighter than it appeared on screen.</p>
+
+<p><strong>Capital gains tax</strong> applies when you sell an investment at a profit. The taxable gain is added to your annual income at a 40% inclusion rate — meaning a large gain can push you into a higher tax bracket.</p>
+
+<p><strong>Interest tax</strong> kicks in once your annual interest income exceeds R23,800 (under 65) or R34,500 (65 and older). At 10% annual growth, just R238,000 invested outside a TFI already breaches that exemption. Everything above it gets taxed. Inside a TFI — none of it ever does.</p>
+
+<p>If you contribute over the R46,000 annual limit, SARS charges a 40% penalty on the excess with no exceptions. Staying within the threshold is non-negotiable.</p>
+
+<h3>Who Should Use It?</h3>
+
+<p>Everyone. But it is especially powerful for younger investors, because tax-free compounding has decades to run. Unlike a Retirement Annuity, your money is accessible at any time without penalty — but early and frequent withdrawals defeat the entire purpose. Think of it as untouchable unless absolutely necessary.</p>
+
+<h3>How Will My Investment Grow?</h3>
+
+<p>Your growth depends largely on your appetite for risk and your investment horizon.</p>
+
+<p>If you prefer stability and don't want your investment fluctuating with markets, a more conservative strategy — investing in money market or income funds — will deliver slower but steadier growth with less volatility.</p>
+
+<p>If you're comfortable with more risk and have a longer time horizon, a growth-oriented strategy invested in equities and balanced funds will typically deliver higher returns over time. Markets will fluctuate. There will be bad years. But over 20 to 30 years, the compounding effect of staying invested through those cycles is what builds real wealth.</p>
+
+<p>The golden rule: <strong>the longer your investment term, the more risk you can afford to take.</strong> Patience and consistency beat timing the market every single time.</p>
+
+<p>If you're unsure which strategy suits your situation, speak to a financial adviser before committing. The right strategy is personal — it depends on your income, your goals, and how long you plan to stay invested.</p>
+
+<h3>How Much Do I Need to Invest?</h3>
+
+<p>This is the part that matters most — and the good news is the entry point is lower than most people think.</p>
+
+<p><strong>Scenario 1 — Starting small:</strong><br>
+Mildred is 25 years old and earns R25,000 per month. She starts investing R500 per month into her TFI, increasing her contribution by 5% each year. By age 45 — just 20 years later — her investment has grown to <strong>R416,396.</strong> That's a meaningful financial cushion built on less than the cost of a basic cell phone contract per month.</p>
+
+<p>But here's where it gets interesting.</p>
+
+<p>If Mildred keeps that same investment going until age 55 — just 10 more years — and increases her annual escalation to 10%, her investment grows to <strong>R2,327,958.</strong> Same starting amount. Ten more years of patience. The difference is R1.9 million.</p>
+
+<p><strong>Scenario 2 — Stepping it up:</strong><br>
+If Mildred invests R1,500 per month instead — still well within reach on a R25,000 salary — escalating at 10% per year for 30 years until age 55, her TFI grows to <strong>R7,068,745.</strong></p>
+
+<p>That is the power of compound growth inside a tax-free wrapper. The tax saving alone over that period amounts to hundreds of thousands of rands that would otherwise have gone to SARS.</p>
+
+<p>The average South African saves less than 2% of their income. Financial advisers recommend a minimum of 15%. The gap between those two numbers is where financial stress lives — and a Tax-Free Investment is one of the most efficient tools available to close it.</p>
+
+<h3>What Should You Do Next?</h3>
+
+<p>Start. Even R500 per month makes a difference when time is on your side. The best time to open a Tax-Free Investment was the day you started earning. The second best time is today.</p>
+
+<p>If you're not sure where to begin or which strategy suits your situation, <a href="contact.html" style="color:var(--green); font-weight:600;">book a free 30-minute consultation</a> and we'll map it out together.</p>
+    `
+  },
+  {
+    id: 1,
+    title: "Why Starting Your Retirement Annuity in Your 20s Changes Everything",
+    date: "2026-03-12",
+    category: "Retirement",
+    excerpt: "The single biggest advantage you have as a young investor isn't income — it's time. Here's how compound growth quietly builds wealth while you sleep.",
+    slug: "retirement-annuity-in-your-20s",
+    content: `
+<p>Most people think the key to a comfortable retirement is earning a high salary. It's not. The real key is time — and if you're in your 20s, you have more of it than you'll ever have again.</p>
+
+<p>Let's look at the numbers. If you invest R1,000 per month starting at age 25, assuming a 10% average annual return, you'll have approximately R6.3 million by age 65. If you wait until 35 to start the same investment, you'll have around R2.3 million. Same monthly amount. A R4 million difference — just because of 10 years.</p>
+
+<p>This is compound growth at work. Your money earns returns, and then those returns earn returns. The longer it runs, the more powerful it becomes.</p>
+
+<h3>The Retirement Annuity Advantage</h3>
+
+<p>In South Africa, a Retirement Annuity (RA) is one of the most tax-efficient ways to build long-term wealth. Contributions are tax-deductible up to 27.5% of your taxable income (maximum R350,000 per year). Your investment grows tax-free inside the fund. And you only pay tax when you draw an income in retirement — when you're likely in a lower tax bracket.</p>
+
+<p>Starting early means more years of tax-free compounding. It means smaller monthly contributions for the same outcome. And it means building a habit of saving before lifestyle inflation sets in.</p>
+
+<h3>What to Do Next</h3>
+
+<p>Even R500 per month makes a meaningful difference when you start young. The best time to start was yesterday. The second best time is today.</p>
+
+<p>If you'd like to understand exactly what your retirement could look like, <a href="contact.html" style="color:var(--green); font-weight:600;">book a free consultation</a> and we'll run the numbers together.</p>
+    `
+  },
+  {
+    id: 2,
+    title: "Estate Planning Isn't Just for the Wealthy",
+    date: "2026-01-15",
+    category: "Estate",
+    excerpt: "A valid will, properly nominated beneficiaries, and an understanding of estate duty can save your family months of stress and significant cost.",
+    slug: "estate-planning-not-just-for-wealthy",
+    content: `
+<p>Most people think estate planning is something you do when you're wealthy, old, or both. The truth is that if you have assets, dependants, or people who would be affected by your death — you need a plan.</p>
+
+<p>Without a valid will, your estate is distributed according to the Intestate Succession Act. That may not reflect your wishes. Your family could wait months — sometimes over a year — for assets to be released. And without proper planning, estate duty and executor's fees can consume a significant portion of what you leave behind.</p>
+
+<h3>The Basics Everyone Needs</h3>
+
+<p><strong>A valid will.</strong> Simple, signed, witnessed correctly. Without it, the state decides what happens to your assets.</p>
+
+<p><strong>Nominated beneficiaries.</strong> Life policies, retirement funds, and TFIs all allow you to nominate beneficiaries directly. These assets bypass your estate entirely — meaning faster payout and no executor's fees on that portion.</p>
+
+<p><strong>Liquidity planning.</strong> Your estate may be asset-rich but cash-poor. Life cover can ensure your family has immediate cash flow while the estate winds up.</p>
+
+<h3>Estate Duty in South Africa</h3>
+
+<p>Estate duty applies at 20% on the dutiable estate above R3.5 million (R7 million for married couples). Proper structuring — including trusts for larger estates — can reduce this significantly.</p>
+
+<p>A straightforward will costs very little to set up. The cost of not having one is far higher. <a href="contact.html" style="color:var(--green); font-weight:600;">Get in touch</a> and we'll make sure your estate is in order.</p>
+    `
+  }
+];
